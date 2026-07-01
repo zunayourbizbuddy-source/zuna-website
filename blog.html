@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทความความรู้ | Zuna Blog</title>
+<meta name="description" content="ความรู้เรื่องภาษี บัญชี และการเงิน สำหรับฟรีแลนซ์และเจ้าของธุรกิจ อ่านเข้าใจง่าย จาก Zuna">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple-950:#170F2E; --purple-800:#2C2153; --purple-700:#4A34B8; --purple-600:#5B3DF6;
+    --purple-400:#9C86FA; --purple-200:#D9CFFC; --lavender-50:#F7F5FE;
+    --amber-500:#F5A84B; --amber-600:#E8923A;
+    --ink-800:#241C3D; --ink-600:#544C72; --ink-400:#8A81A6;
+    --white:#FFFFFF; --line:#E7E1FA;
+    --shadow: 0 20px 50px -20px rgba(44,33,83,0.25);
+    --radius-lg: 28px; --radius-md: 18px; --radius-sm: 12px;
+    --font-display:'Prompt', 'IBM Plex Sans Thai', sans-serif;
+    --font-body:'IBM Plex Sans Thai', 'Prompt', sans-serif;
+    --ease: cubic-bezier(.16,.8,.3,1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body); color:var(--ink-800); background:var(--lavender-50); -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  h1,h2,h3{font-family:var(--font-display); font-weight:700; color:var(--purple-950);}
+  .container{width:100%; max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  header.nav{position:sticky; top:0; z-index:100; background:rgba(247,245,254,0.9); backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:21px; color:var(--purple-950);}
+  .brand img{width:36px; height:36px; border-radius:9px; object-fit:cover;}
+  nav.links{display:flex; align-items:center; gap:34px;}
+  nav.links a{font-size:14.5px; font-weight:500; color:var(--ink-600); transition:color .2s;}
+  nav.links a:hover, nav.links a.active{color:var(--purple-700);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 24px; border-radius:100px; font-weight:600; font-size:14.5px; border:none; transition:all .25s var(--ease);}
+  .btn-primary{background:var(--purple-600); color:var(--white); box-shadow:0 12px 24px -10px rgba(91,61,246,0.55);}
+  .btn-primary:hover{transform:translateY(-2px); background:var(--purple-700);}
+
+  .hero{padding:70px 0 50px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:600; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--purple-700); margin-bottom:16px;}
+  .eyebrow::before{content:''; width:22px; height:2px; background:var(--amber-500); border-radius:2px;}
+  .hero h1{font-size:clamp(30px,4vw,44px); line-height:1.2; margin-bottom:14px;}
+  .hero p{font-size:16.5px; color:var(--ink-600); max-width:560px; line-height:1.7;}
+
+  .tag-row{display:flex; gap:10px; flex-wrap:wrap; margin:30px 0 10px;}
+  .tag-pill{background:var(--white); border:1px solid var(--line); padding:8px 16px; border-radius:100px; font-size:13px; font-weight:600; color:var(--ink-600);}
+
+  .article-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; padding:30px 0 100px;}
+  .article-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column; transition:transform .3s var(--ease), box-shadow .3s var(--ease);}
+  .article-card:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
+  .article-card .cat{display:inline-flex; align-self:flex-start; background:#FFF1DE; color:var(--amber-600); font-weight:700; font-size:12px; padding:6px 14px; border-radius:100px; margin-bottom:18px;}
+  .article-card h2{font-size:21px; line-height:1.4; margin-bottom:12px;}
+  .article-card p{font-size:14.5px; color:var(--ink-600); line-height:1.7; margin-bottom:22px; flex:1;}
+  .article-card .read-more{font-family:var(--font-display); font-weight:600; font-size:14px; color:var(--purple-700); display:inline-flex; align-items:center; gap:6px;}
+  .article-card .read-more span{transition:transform .25s var(--ease);}
+  .article-card:hover .read-more span{transform:translateX(4px);}
+  .article-card.featured{grid-column:1 / -1; display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; padding:40px;}
+  .article-card.featured .visual{background:linear-gradient(155deg, var(--purple-700), var(--purple-950)); border-radius:var(--radius-md); height:100%; min-height:180px; display:flex; align-items:center; justify-content:center; font-size:52px;}
+
+  footer{background:var(--purple-950); color:var(--purple-200); padding:50px 0 30px;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-brand{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--white);}
+  .footer-brand img{width:30px; height:30px; border-radius:8px;}
+  footer a{font-size:14px; color:var(--purple-200);}
+  footer a:hover{color:var(--white);}
+  .footer-links{display:flex; gap:24px; flex-wrap:wrap;}
+
+  @media (max-width:820px){
+    nav.links{display:none;}
+    .article-grid{grid-template-columns:1fr;}
+    .article-card.featured{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><img src="zuna-logo.jpg" alt="Zuna logo"><span>Zuna</span></a>
+    <nav class="links">
+      <a href="index.html">หน้าแรก</a>
+      <a href="index.html#about">เกี่ยวกับเรา</a>
+      <a href="index.html#ecosystem">Ecosystem</a>
+      <a href="index.html#products">ผลิตภัณฑ์</a>
+      <a href="blog.html" class="active">บทความ</a>
+    </nav>
+    <a href="index.html#products" class="btn btn-primary">ทดลองใช้ ZunaMoney</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Zuna Learning</div>
+    <h1>บทความความรู้เรื่องภาษีและการเงิน</h1>
+    <p>อ่านเข้าใจง่าย ใช้ได้จริง สำหรับฟรีแลนซ์และเจ้าของธุรกิจ ที่อยากตัดสินใจเรื่องภาษีได้อย่างมั่นใจ</p>
+    <div class="tag-row">
+      <span class="tag-pill">ภาษี</span>
+      <span class="tag-pill">บัญชี</span>
+      <span class="tag-pill">การเงิน</span>
+      <span class="tag-pill">ฟรีแลนซ์</span>
+      <span class="tag-pill">ลดหย่อนภาษี</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="article-grid">
+
+      <a href="articles/freelance-tax-guide.html" class="article-card featured">
+        <div>
+          <span class="cat">ภาษี · ฟรีแลนซ์</span>
+          <h2>ฟรีแลนซ์เสียภาษียังไง? คู่มือคำนวณภาษีฉบับเข้าใจง่าย</h2>
+          <p>สูตรคำนวณภาษีฟรีแลนซ์ 4 ขั้นตอน พร้อมตัวอย่างคำนวณจริงที่เห็นตัวเลขชัดเจน อ่านจบแล้วคำนวณภาษีของตัวเองได้เลย</p>
+          <span class="read-more">อ่านบทความ <span>→</span></span>
+        </div>
+        <div class="visual">🧮</div>
+      </a>
+
+      <a href="articles/tax-refund-withholding.html" class="article-card">
+        <span class="cat">ภาษี · ฟรีแลนซ์</span>
+        <h2>โดนหักภาษี ณ ที่จ่าย 3% ขอคืนได้ไหม?</h2>
+        <p>วิธีขอคืนภาษีหัก ณ ที่จ่ายฉบับฟรีแลนซ์ ทีละขั้นตอน พร้อมตัวอย่างคำนวณเงินคืนจริง</p>
+        <span class="read-more">อ่านบทความ <span>→</span></span>
+      </a>
+
+      <a href="articles/tax-deductions-2569.html" class="article-card">
+        <span class="cat">ลดหย่อนภาษี</span>
+        <h2>ลดหย่อนภาษี 2569 มีอะไรบ้าง? รวมทุกรายการล่าสุด</h2>
+        <p>รวมรายการลดหย่อนภาษีแบ่งเป็น 4 กลุ่ม เข้าใจง่าย พร้อมเพดานของแต่ละรายการ วางแผนใช้สิทธิให้คุ้มก่อนสิ้นปี</p>
+        <span class="read-more">อ่านบทความ <span>→</span></span>
+      </a>
+
+      <a href="articles/ssf-vs-rmf.html" class="article-card">
+        <span class="cat">การลงทุน · ลดหย่อนภาษี</span>
+        <h2>SSF vs RMF ต่างกันยังไง? อัปเดต SSF ลดหย่อนไม่ได้แล้ว</h2>
+        <p>อัปเดตสถานะล่าสุดของกองทุน SSF และ RMF พร้อมชี้ทางว่าตอนนี้ควรเลือกกองทุนอะไรแทนเพื่อลดหย่อนภาษี</p>
+        <span class="read-more">อ่านบทความ <span>→</span></span>
+      </a>
+
+      <a href="articles/salary-tax-threshold.html" class="article-card">
+        <span class="cat">ภาษี · มนุษย์เงินเดือน</span>
+        <h2>เงินเดือนเท่าไหร่ถึงต้องเสียภาษี?</h2>
+        <p>ตารางคำนวณภาษีเงินได้บุคคลธรรมดา แยกความต่างระหว่าง "ต้องยื่น" กับ "ต้องเสีย" ภาษี ให้เข้าใจชัดเจน</p>
+        <span class="read-more">อ่านบทความ <span>→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="index.html" class="footer-brand"><img src="zuna-logo.jpg" alt="Zuna logo"><span>Zuna</span></a>
+    <div class="footer-links">
+      <a href="index.html#about">เกี่ยวกับเรา</a>
+      <a href="index.html#products">ผลิตภัณฑ์</a>
+      <a href="blog.html">บทความ</a>
+      <a href="index.html#contact">ติดต่อเรา</a>
+    </div>
+    <span style="font-size:13px; color:var(--purple-400)">© 2026 Zuna. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
